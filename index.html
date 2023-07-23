@@ -7,8 +7,119 @@
     <title>Finance Manager</title>
     <link rel="stylesheet" href="./css/main.css">
     <script src="./dist/app.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+
 </head>
+
 <body>
-    
+
+    <header>
+        <h1><i class="ti ti-wallet"></i>
+            Wallet <p>Twój osobisty menedżer finansów</p>
+        </h1>
+    </header>
+
+    <main>
+        <section class="transactions">
+
+            <h2 class="title">Lista transakcji</h2>
+
+            <div class="transaction-list">
+                <div class="income-area">
+                    <h3>Przychód:</h3>
+                    <div class="transaction" id="0">
+                        <p class="transaction-name"><i class="ti ti-cash-banknote"></i>
+                            Wypłata
+                        </p>
+                        <p class="transaction-amount">2000zł
+                            <button class="delete"><i class="ti ti-letter-x"></i></button>
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="expenses-area">
+                    <h3>Wydatki:</h3>
+                    <div class="transaction" id="1">
+                        <p class="transaction-name"><i class="ti ti-shopping-cart"></i>
+                            </i>
+                            Wypłata
+                        </p>
+                        <p class="transaction-amount">-400zł
+                            <button class="delete"><i class="ti ti-letter-x"></i></button>
+                        </p>
+                    </div>
+                    <div class="transaction" id="2">
+                        <p class="transaction-name"><i class="ti ti-pizza"></i>
+
+                            Wypłata
+                        </p>
+                        <p class="transaction-amount">-100zł
+                            <button class="delete"><i class="ti ti-letter-x"></i></button>
+                        </p>
+                    </div>
+                    <div class="transaction" id="3">
+                        <p class="transaction-name"><i class="ti ti-movie"></i>
+
+                            Wypłata
+                        </p>
+                        <p class="transaction-amount">50zł
+                            <button class="delete"><i class="ti ti-letter-x"></i></button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="options">
+            <div>
+                <h2 class="title">Dostępne środki:</h2>
+                <p class="available-money">0zł</p>
+            </div>
+
+            <div class="controls">
+                <button class="add-transaction"><i class="ti ti-plus"> </i> Dodaj transakcję
+                </button>
+                <button class="delete-all"><i class="ti ti-trash"> Usuń wszystko</i>
+                </button>
+            </div>
+
+            <div class="style-selection">
+                <h2 class="title">Wybierz styl:</h2>
+                <div class="color-buttons">
+                    <button class="light"></button>
+                    <button class="dark"></button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="add-transaction-panel">
+        <h2 class="title">Dodaj nową transakcję</h2>
+        <label for="name">Nazwa:</label>
+        <small>(podaj nazwę transakcji)</small>
+        <input type="text" id="name">
+        
+        <label for="name">Kwota:</label>
+        <small>(podaj kwotę transakcji)</small>
+        <input type="number" id="name">
+
+        <label for="category">Wybierz kategorię:</label>
+        <small>( [ + ] oznacza przychód, [ - ] oznacza wydatek )</small>
+        <select  id="category">
+            <option value="none" selected disabled></option>
+            <option value="income"> [ + ] Przychód</option>
+            <option value="shopping"> [ - ] Zakupy</option>
+            <option value="food"> [ - ] Jedzenie</option>
+            <option value="cinema"> [ - ] Kino</option>
+        </select>
+
+     <div class="panel-buttons">
+        <button class="save"><i class="ti ti-device-floppy"></i>
+            Zapisz</button>
+        <button class="cancel"><i class="ti ti-letter-x"></i>Anuluj</button>
+     </div>
+    </div>
 </body>
+
 </html>
