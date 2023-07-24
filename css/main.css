@@ -1,3 +1,9 @@
+:root {
+  --first-color: #f9f9f9;
+  --second-color: #14161f;
+  --border-color: rgba(0, 0, 0, 0.2);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,8 +11,8 @@
 }
 
 body {
-  background-color: #f9f9f9;
-  color: #14161f;
+  background-color: var(--first-color);
+  color: var(--second-color);
   min-height: 100vh;
   font-family: sans-serif;
 }
@@ -56,7 +62,7 @@ main .transactions .expenses-area {
   margin: 0 20px;
   padding: 30px;
   width: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border-color);
 }
 main .transactions .income-area h3,
 main .transactions .income-area,
@@ -74,7 +80,7 @@ main .transactions .transaction {
   display: flex;
   justify-content: space-between;
   padding: 10px 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid var(--border-color);
 }
 main .transactions .transaction:last-child {
   border-bottom: none;
@@ -90,7 +96,7 @@ main .transactions .delete {
   background: none;
   border: none;
   font-size: 18px;
-  color: #14161f;
+  color: var(--second-color);
   cursor: pointer;
   transition: transform 0.3s;
 }
@@ -100,7 +106,7 @@ main .transactions .delete:hover {
 main .options {
   padding: 80px 40px;
   width: 500px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border-color);
 }
 main .options .available-money {
   margin-top: -10px;
@@ -113,16 +119,16 @@ main .options .controls {
 }
 main .options .controls button {
   padding: 12px 20px;
-  color: #14161f;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: var(--second-color);
+  border: 1px solid var(--border-color);
   cursor: pointer;
   background: none;
   transition: color 0.3s, background-color 0.3s;
   border-radius: 5px;
 }
 main .options .controls button:hover {
-  color: #f9f9f9;
-  background-color: #14161f;
+  color: var(--first-color);
+  background-color: var(--second-color);
 }
 main .options .controls i {
   margin-right: 10px;

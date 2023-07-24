@@ -57,6 +57,7 @@ const addNewTransaction = () => {
         : expensesSection.appendChild(newTransaction) &&
             newTransaction.classList.add("expense");
     moneyArr.push(parseFloat(amountInput.value));
+    countMoney(moneyArr);
     hidePanel();
     ID++;
     clearInputs();
@@ -81,6 +82,40 @@ const checkCategory = transaction => {
             break;
     }
 };
+const countMoney = (money) => {
+    const newMoney = money.reduce((a, b) => a + b);
+    availableMoney.textContent = `${newMoney}zł`;
+};
+const deleteTransaction = id => {
+    const transactionToDelete = document.getElementById(id);
+    const transactionAmount = parseFloat(transactionToDelete.childNodes[3].innerText);
+    const indexOffTransaction = moneyArr.indexOf(transactionAmount);
+    moneyArr.splice(indexOffTransaction, 1);
+    transactionToDelete.classList.contains("income")
+        ? incomeSection.removeChild(transactionToDelete)
+        : expensesSection.removeChild(transactionToDelete);
+    countMoney(moneyArr);
+};
+const deleteAllTransactions = () => {
+    incomeSection.innerHTML = "<h3>Przychódz:</h3>";
+    expensesSection.innerHTML = "<h3>Wydatki:</h3>";
+    availableMoney.textContent = "0zł";
+    moneyArr = [0];
+};
+const changeStyleToLight = () => {
+    root.style.setProperty('--first-color', '#F9F9F9');
+    root.style.setProperty('--second-color', '#14161f');
+    root.style.setProperty('--border-color', 'rgba(0, 0, 0, 0.2)');
+  }
+  
+  const changeStyleToDark = () => {
+    root.style.setProperty('--first-color', '#14161f');
+    root.style.setProperty('--second-color', '#f9f9f9');
+    root.style.setProperty('--border-color', 'rgba(255, 255, 255, 0.4)');
+  }
 addBtn.addEventListener("click", showPanel);
 cancelBtn.addEventListener("click", hidePanel);
 saveBtn.addEventListener("click", checkForm);
+deleteAllBtn.addEventListener("click", deleteAllTransactions);
+styleLight.addEventListener('click', changeStyleToLight);
+styleDark.addEventListener('click', changeStyleToDark);

@@ -1,6 +1,8 @@
-$first-color: #f9f9f9;
-$second-color: #14161f;
-$border-color: rgba(0, 0, 0, 0.2);
+:root {
+	--first-color: #f9f9f9;
+	--second-color: #14161f;
+	--border-color: rgba(0, 0, 0, 0.2);
+  }
 
 * {
 	box-sizing: border-box;
@@ -9,8 +11,8 @@ $border-color: rgba(0, 0, 0, 0.2);
 }
 
 body {
-	background-color: $first-color;
-	color: $second-color;
+	background-color: var(--first-color);
+	color: var(--second-color);
 	min-height: 100vh;
 	font-family: sans-serif;
 }
@@ -64,7 +66,7 @@ main {
 			margin: 0 20px;
 			padding: 30px;
 			width: 50%;
-			border: 1px solid $border-color;
+			border: 1px solid var(--border-color);
 		}
 
 		.income-area h3,
@@ -84,7 +86,7 @@ main {
 			display: flex;
 			justify-content: space-between;
 			padding: 10px 0;
-			border-bottom: 1px solid $border-color;
+			border-bottom: 1px solid var(--border-color);
 
 			&:last-child {
 				border-bottom: none;
@@ -102,7 +104,7 @@ main {
 			background: none;
 			border: none;
 			font-size: 18px;
-			color: $second-color;
+			color: var(--second-color);
 			cursor: pointer;
 			transition: transform 0.3s;
 
@@ -115,7 +117,7 @@ main {
 	.options {
 		padding: 80px 40px;
 		width: 500px;
-		border: 1px solid $border-color;
+		border: 1px solid var(--border-color);
 
 		.available-money {
 			margin-top: -10px;
@@ -128,15 +130,15 @@ main {
 
 			button {
 				padding: 12px 20px;
-				color: $second-color;
-				border: 1px solid $border-color;
+				color: var(--second-color);
+				border: 1px solid var(--border-color);
 				cursor: pointer;
 				background: none;
 				transition: color 0.3s, background-color 0.3s;
 				border-radius: 5px;
 				&:hover {
-					color: $first-color;
-					background-color: $second-color;
+					color: var(--first-color);
+					background-color: var(--second-color);
 				}
 			}
 			i {
